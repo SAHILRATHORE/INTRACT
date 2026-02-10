@@ -9,7 +9,7 @@ const ChatBox = () => {
   const dispatch = useDispatch();
   useEffect(()=>{
     return () => dispatch(setSelectedUser(null))
-  },[]);
+  },[dispatch]);
 
   // 🔴 NO USER SELECTED
   if (!selectedUser) {

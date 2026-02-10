@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setMessages } from '../redux/messageSlice'
 
@@ -26,7 +26,7 @@ const useGetMessages = () => {
             }
         }
         fetchMessages();
-    }, [selectedUser])
+    }, [selectedUser, dispatch])
 
 }
 

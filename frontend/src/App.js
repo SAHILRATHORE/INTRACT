@@ -57,7 +57,7 @@ function App() {
       }
     };
     validateToken();
-  }, []);
+  }, [dispatch]);
   
   useEffect(()=>{
     if (authuser) {
@@ -80,7 +80,7 @@ function App() {
         dispatch(setSocket(null))
       }
     }
-  }, [authuser])
+  }, [authuser, dispatch, socket])
   
   // Don't render until token validation completes
   if (!checked) {

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import {useDispatch} from 'react-redux'
 import { setOtherUsers } from '../redux/userSlice';
 const useGetOtherUsers = () => {
@@ -20,7 +20,7 @@ const useGetOtherUsers = () => {
         }
     }
     fetchOtherUsers()
-  },[])
+  },[dispatch])
 }
 
 export default useGetOtherUsers
