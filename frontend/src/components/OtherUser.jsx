@@ -35,7 +35,7 @@ const OtherUser = ({ user }) => {
           )}
         </div>
 
-        <h1>{user.fullname}</h1>
+        <h1>{user.username}</h1>
       </div>
     </div>
   );

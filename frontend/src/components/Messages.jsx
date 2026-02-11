@@ -28,7 +28,7 @@ useGetRealTimeMessage();
         <h1 className="text-xl text-black font-semibold">
           let's start conversation with 
         </h1>
-        <span className="text-[#296994] font-extrabold text-3xl">{selectedUser?.fullname}</span>
+        <span className="text-[#296994] font-extrabold text-3xl">{selectedUser?.username}</span>
       </div>
     );
   }
@@ -40,7 +40,7 @@ useGetRealTimeMessage();
         <h1 className="text-2xl font-bold text-gray-500">
           👋 Let’s start a conversation with <br />
           <span className="capitalize text-black">
-            {selectedUser.fullname}
+            {selectedUser.username}
           </span>
         </h1>
       </div>

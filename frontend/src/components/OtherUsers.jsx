@@ -11,7 +11,7 @@ const OtherUsers = ({ search }) => {
 
   // 🔍 filter users
   const filteredUsers = OtherUsers.filter((user) =>
-    user.fullname.toLowerCase().includes(search.toLowerCase())
+    user.username.toLowerCase().includes(search.toLowerCase())
   );
 
   return (

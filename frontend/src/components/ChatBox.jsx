@@ -15,7 +15,7 @@ const ChatBox = () => {
   if (!selectedUser) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center bg-[#FFF6E5]">
-         <span  className="text-[#236794] font-extrabold text-3xl">Hii {authuser?.fullname}</span>
+         <span  className="text-[#236794] font-extrabold text-3xl">Hii {authuser?.username}</span>
         <h1 className="text-2xl font-bold text-gray-500">
           💬 Let’s start chatting
         </h1>
@@ -31,12 +31,12 @@ const ChatBox = () => {
         <div className="border-2 border-black rounded-full w-10 h-10 overflow-hidden">
           <img
             src={selectedUser.profilePhoto}
-            alt={selectedUser.fullname}
+            alt={selectedUser.username}
             className="w-full h-full object-cover"
           />
         </div>
         <h1 className="text-2xl font-extrabold text-black capitalize">
-          {selectedUser.fullname}
+          {selectedUser.username}
         </h1>
       </div>
 
