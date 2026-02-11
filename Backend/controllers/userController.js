@@ -34,8 +34,8 @@ export const register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Profile photo
-    const maleProfilePhoto = `https://avatar.iran.liara.run/public/boy?username=${username}`;
-    const femaleProfilePhoto = `https://avatar.iran.liara.run/public/girl?username=${username}`;
+    const maleProfilePhoto = `https://api.dicebear.com/9.x/adventurer/svg?seed=${username}`;
+    const femaleProfilePhoto = `https://api.dicebear.com/9.x/adventurer/svg?seed=${username}`;
 
     // Create user
     const user = await User.create({
