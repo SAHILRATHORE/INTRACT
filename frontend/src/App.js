@@ -59,28 +59,25 @@ function App() {
     validateToken();
   }, [dispatch]);
   
-  useEffect(()=>{
-    if (authuser) {
-      const socket = io(process.env.REACT_APP_API_URL, {
-        query:{
-          userId:authuser._id
-        }
-      });
-      
-      dispatch(setSocket(socket));
+  useEffect(() => {
+  if (authuser && authuser._id) {
 
-      socket.on('getOnlineUsers', (onlineUsers) => {
-        dispatch(setOnlineUsers(onlineUsers))
-      })
-      return ()=> socket.close();
-    }
-    else {
-      if (socket) {
-        socket.close();
-        dispatch(setSocket(null))
+    const newSocket = io(process.env.REACT_APP_API_URL, {
+      query: {
+        userId: authuser._id
       }
-    }
-  }, [authuser, dispatch, socket])
+    });
+
+    dispatch(setSocket(newSocket));
+
+    newSocket.on('getOnlineUsers', (onlineUsers) => {
+      dispatch(setOnlineUsers(onlineUsers));
+    });
+
+    return () => newSocket.close();
+  } 
+}, [authuser, dispatch]);
+
   
   // Don't render until token validation completes
   if (!checked) {
